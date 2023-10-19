@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@iconify/react": "^4.1.1"
+  },
+  "dependencies": {
+    "tailwind-merge": "^1.14.0"
   }
 }
