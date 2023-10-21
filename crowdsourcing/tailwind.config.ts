@@ -12,7 +12,8 @@ const config: Config = {
         primary: 'var(--primary-color)',
         secondary: 'var(--secondary-color)',
         'sub-30': 'var(--sub-30)',
-        sub: 'var(--sub)'
+        sub: 'var(--sub)',
+        'black-color': 'var(--black-color)'
       },
       backgroundImage: {
         'on-code': 'var(--on-code)',

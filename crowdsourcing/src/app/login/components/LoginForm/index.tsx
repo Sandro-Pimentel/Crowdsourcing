@@ -4,8 +4,13 @@ import Button from "@/components/Button"
 import Card from "@/components/Card"
 import TextInput from "@/components/TextInput"
 import { Icon } from "@iconify/react/dist/iconify.js"
+import { LoginPageActionTypes } from "../../page"
 
-const LoginForm = () => {
+type LoginFormProps = {
+  handleSetAction: (action: LoginPageActionTypes) => void
+}
+
+const LoginForm = ({handleSetAction}: LoginFormProps) => {
     return (
         <Card className="border-[#121212]">
         <TextInput
@@ -13,14 +18,14 @@ const LoginForm = () => {
         labelClassNames="text-black"
         placeholder="E-mail"
         type="email"
-        iconLeft="uil:envelope-alt"></TextInput>
+        iconLeft="uil:envelope-alt"/>
         
         <TextInput
         label="Senha"
         labelClassNames="text-black"
         placeholder="Senha"
         type="password"
-        iconLeft="uil:key-skeleton-alt"></TextInput>
+        iconLeft="uil:key-skeleton-alt"/>
 
         <div className="mb-6 text-left">
           <a href="" className="text-sub text-sm underline"> Esqueci a senha </a>
@@ -48,8 +53,9 @@ const LoginForm = () => {
         </div>
 
         <div className="mt-[24px]">
-          <span className="cursor-pointer flex gap-2 items-center underline">
-            <Icon icon="ild:plus-square"/>
+          <span className="cursor-pointer flex gap-2 items-center underline"
+          onClick={() => handleSetAction("register")}>
+            <Icon icon="uil:plus-square"/>
             Quero criar uma conta
           </span>
         </div>
