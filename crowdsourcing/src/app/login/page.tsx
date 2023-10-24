@@ -4,6 +4,7 @@ import React from 'react'
 import LoginSidebarImage from './components/LoginSidebarImage'
 import RegisterForm from './components/RegisterForm'
 import LoginForm from './components/LoginForm'
+import NavBar from '@/components/NavBar'
 
 export type LoginPageActionTypes = 'login' | 'register'
 
@@ -38,7 +39,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex h-screen">
+    <main className="flex h-screen-navbar">
         <LoginSidebarImage/>
         <div className='flex-1 flex items-center justify-center'>
           {actions[state.actionType].component}
