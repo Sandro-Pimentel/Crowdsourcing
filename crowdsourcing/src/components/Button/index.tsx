@@ -10,7 +10,7 @@ type ButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const variants = {
-    primary: 'border border-sub-30 bg-on-code hover-bg-on-code-70 text-white gap-1',
+    primary: 'border border-sub-30 bg-on-code hover:bg-on-code-70 text-white gap-1',
     secondary: 'border border-secondary text-black gap-3 hover:bg-on-code-70'
 }
 

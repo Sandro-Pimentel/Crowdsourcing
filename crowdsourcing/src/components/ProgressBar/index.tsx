@@ -15,7 +15,7 @@ const ProgressBar = ({percent, firstElement, secondElement}: ProgressBarProps) =
                 <div className="h-full bg-primary rounded-full" style={{width: percentMessage}}> </div>
             </div>
             <div className="flex items-start relative justify-between">
-                <span>
+                <span className="text-lg font-bold">
                     {percentMessage}
                 </span>
                 {firstElement && <div className="absolute left-1/2 -translate-x-1/2">{firstElement}</div>}

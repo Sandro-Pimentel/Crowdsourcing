@@ -1,37 +1,34 @@
 import Image from 'next/image'
 import ActionCard from './components/ActionCard'
+import ProblemItem from './components/ProblemCard'
 
 export default function Home() {
-  const actions: IAction[] = [
+  const problems: IProblem[] = [
     {
-    img: 'https://jpeg.org/images/jpeg-home.jpg',
-    title: 'Action',
-    description: 'Solution for a problem',
-    author: 'João Moreira',
-    address: {
-      uf: 'SP',
-      city: 'Jacareí',
-      neighborhood: 'Pq Califórnia'
+      imageUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+      description: 'Solution of a problem',
+      address: {
+        uf: 'SP',
+        city: 'Jacareí',
+        neighborhood: 'Pq Califórnia'
+      },
+      deadline: '2023-10-29',
+      pix: '2749812344',
+      author: 'Sandro Roberto'
     },
-    amountCollected: 150,
-    totalGoal: 1000,
-    finalDate: '2023-10-29'
-  },
-  {
-    img: 'https://jpeg.org/images/jpeg-home.jpg',
-    title: 'Action 2',
-    description: 'Solution for a problem 2',
-    author: 'Sandro Roberto',
-    address: {
-      uf: 'SP',
-      city: 'Jacareí',
-      neighborhood: 'CKP'
-    },
-    amountCollected: 160,
-    totalGoal: 700,
-    finalDate: '2023-10-26'
-  }
-]
+    {
+      imageUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+      description: 'Solution of a problem',
+      address: {
+        uf: 'SP',
+        city: 'Jacareí',
+        neighborhood: 'Pq Califórnia'
+      },
+      deadline: '2023-10-29',
+      pix: '2749812344',
+      author: 'Sandro Roberto'
+    }
+  ]
   
   return (
     <main className="flex flex-col items-center">
@@ -41,7 +38,7 @@ export default function Home() {
         </h1>
       </div>
       <div className='flex flex-wrap gap-8 w-full max-w-[1360px] justify-center py-4'>
-        {actions.map((action, index) => <ActionCard key={index} action={action}/>)}
+        {problems.map((problem, index) => <ProblemItem key={index} problem={problem}/>)}
       </div>
     </main>
   )

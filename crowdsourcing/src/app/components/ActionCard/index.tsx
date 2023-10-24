@@ -1,8 +1,10 @@
 'use client'
 
 import Address from "@/components/Address"
+import Button from "@/components/Button"
 import ProgressBar from "@/components/ProgressBar"
 import { StringUtils } from "@/utils/stringUtils"
+import RemainingDays from "../RemainingDays"
 
 type ActionCardProps = {
     action: IAction
@@ -33,7 +35,7 @@ const ActionCard = ({action}: ActionCardProps) => {
                     <Address uf={address?.uf} city={address?.city} neighborhood={address?.neighborhood}/>
                 </div>
                 <ProgressBar 
-                percent = {amountCollected?? 0/(totalGoal?? 1)}
+                percent = {(amountCollected?? 0) /(totalGoal?? 0)}
                 firstElement = {
                     <div className="flex flex-col items-center text-sm">
                         <h3 className="font-bold">R$ {amountCollected}</h3>
@@ -41,13 +43,10 @@ const ActionCard = ({action}: ActionCardProps) => {
                     </div>
                 }
                 secondElement = {
-                    <div className="flex flex-col items-end text-sm">
-                        <h3 className="font-bold">7 dias</h3>
-                        <h4>Restantes</h4>
-                    </div>
+                    <RemainingDays finalDate={`${finalDate}`} label="Restantes"/>
                 }/>
-            
             </div>
+            <Button iconLeft="fluent:handshake-24-filled" className="py-6">Apoiar Ação</Button>
         </div>
     )
 }

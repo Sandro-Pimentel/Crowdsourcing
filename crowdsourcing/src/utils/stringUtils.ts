@@ -15,4 +15,29 @@ export class StringUtils {
     static capitalizeFirstCharacterInText(text: string): string {
         return this.capitalizeFirstCharacter(text)
     }
+
+    static getRemainingDays = (finalDate: string) => {
+        const currentDateObject = new Date()
+
+        const finalDateObject = new Date(finalDate)
+
+        finalDateObject.setUTCHours(finalDateObject.getHours() + 3)
+
+        const dateDiff = finalDateObject.getTime() - currentDateObject.getTime()
+
+        const daysRemaining = Math.floor(dateDiff/ (1000 * 60 * 60 * 24))
+
+        if(daysRemaining <= 0) {
+            return "Nenhum dia"
+        }
+
+        if(daysRemaining < 1) {
+            const hoursRemaining = Math.floor(dateDiff / (1000 * 60 * 60))
+            return `${hoursRemaining} horas`
+        } else if(daysRemaining === 1) {
+            return `${daysRemaining} dia`
+        } else {
+            return `${daysRemaining} dias`
+        }
+    }
 }

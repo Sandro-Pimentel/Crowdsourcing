@@ -26,8 +26,11 @@ const Select = ({subdescription, labelClassNames, options, label, ...props}: Sel
             <label className={mergedLabelClasses}> {label} </label>
             <label> {subdescription} </label>
             <div className="flex items-center border border-sub rounded-lg bg-white">
-                <select id="votingTime" className={`bg-white border text-gray-900 ${defaultSelectClasses}`}>
-                    {options.map((option) => <option value={option.value}>
+                <select {...props} id="votingTime" className={`bg-white border text-gray-900 ${defaultSelectClasses}`}>
+                    {options.map((option) => 
+                    <option defaultValue="3" 
+                        key={option.value}
+                        value={option.value}>
                         {option.text}
                     </option>
                     )}
