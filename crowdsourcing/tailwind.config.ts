@@ -19,6 +19,9 @@ const config: Config = {
         'on-code': 'var(--on-code)',
         'on-code-70': 'var(--on-code-70)',
       },
+      height: {
+        'screen-navbar': 'calc(100vh - 64px)!important'
+      }
     },
   },
   plugins: [],
